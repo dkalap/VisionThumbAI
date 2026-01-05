@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -14,8 +14,15 @@ import TechStack from "./pages/TechStack";
 import Roadmap from "./pages/Roadmap";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import { useEffect } from "react";
 
 export default function App() {
+
+    const {pathname} = useLocation()
+    useEffect(()=> {
+        window.scrollTo(0,0)
+
+    }, [pathname])
     return (
         <>
             <LenisScroll />
